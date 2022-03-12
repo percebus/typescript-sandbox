@@ -1,0 +1,29 @@
+{
+  "name": "typescript-sandbox",
+  "version": "0.1.0",
+  "description": "TypeScript SandBox/PlayGround",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/percebus/typescript-sandbox.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "node",
+    "tests",
+    "examples",
+    "samples"
+  ],
+  "author": "percebus",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/percebus/typescript-sandbox/issues"
+  },
+  "homepage": "https://github.com/percebus/typescript-sandbox#readme",
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}
