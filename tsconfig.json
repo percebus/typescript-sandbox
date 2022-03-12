@@ -1,0 +1,11 @@
+{
+  "lib": ["es2015"],
+  "compilerOptions": {
+    "module": "commonjs", // Node uses commonjs.
+    "esModuleInterop": true,
+    "target": "es6",
+    "moduleResolution": "node", // mimics the Node module resolution mechanism.
+    "sourceMap": true,
+    "outDir": "dist" // This is the location to output .js files after transpilation.
+  }
+}

@@ -2,9 +2,19 @@
   "name": "typescript-sandbox",
   "version": "0.1.0",
   "description": "TypeScript SandBox/PlayGround",
-  "main": "index.js",
+  "main": "dist/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "npm:install:global": "npm install -g standard",
+    "setup": "npm run npm:install:global",
+    "setup:ci": "npm run setup",
+    "ts-standard": "ts-standard src/**/*.ts --fix",
+    "lint": "npm run ts-standard",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "FIXMEprebuild": "npm run ts-standard",
+    "build": "npx tsc",
+    "app": "node .",
+    "prestart": "npm run build",
+    "start": "npm run app"
   },
   "repository": {
     "type": "git",
@@ -24,6 +34,9 @@
   },
   "homepage": "https://github.com/percebus/typescript-sandbox#readme",
   "devDependencies": {
-    "typescript": "^4.6.2"
+    "@types/express": "^4.17.13",
+    "express": "^4.17.3",
+    "ts-standard": "^11.0.0",
+    "typescript": "~4.4.0"
   }
 }
