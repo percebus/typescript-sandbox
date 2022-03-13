@@ -1,12 +1,7 @@
-import express from 'express'
-const appExpress = express()
+import { getWelcomeMessage } from './welcome-message/getWelcomeMessage'
 
+function main() {
+    console.log('app', getWelcomeMessage())
+}
 
-const port = 3000
-appExpress
-  .get('/', (request, response) => {
-    response.send('Hello World!')
-  })
-  .listen(port, () => {
-    return console.log(`Express is listening at http://localhost:${port}`)
-  })
+main()
