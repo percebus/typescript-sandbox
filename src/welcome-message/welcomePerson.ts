@@ -1,3 +1,3 @@
-const welcomePerson = 'Welcome to ts-jest!!!'
+const welcomePerson: string = 'welcome, person'
 
 export default welcomePerson

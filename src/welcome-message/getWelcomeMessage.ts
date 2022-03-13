@@ -1,1 +1,3 @@
-export const getWelcomeMessage = (): string => 'Welcome to ts-jest!!!'
+import welcomePerson from './welcomePerson'
+
+export const getWelcomeMessage = (): string => welcomePerson
