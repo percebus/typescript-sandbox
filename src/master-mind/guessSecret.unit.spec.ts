@@ -8,14 +8,13 @@ describe('MASTERMIND', () => {
     let rightLocation: number
     let wrongLocation: number
 
-    function setup(secret:string, guess:string) {
-      return function() {
+    function setup (secret: string, guess: string) {
+      return function () {
         feedback = guessSecret(secret, guess)
         rightLocation = feedback[0]
         wrongLocation = feedback[1]
       }
     }
-
 
     describe('secret', () => {
       describe('8520', () => {
