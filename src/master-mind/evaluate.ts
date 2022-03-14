@@ -17,7 +17,19 @@
 export type correctTuple = [number, number]
 
 export const evaluate = (secret: string, guess: string): correctTuple => {
+  const mask = /^\d{4,4}$/
+  function validate (code: string): void {
+    if (!mask.test(code)) {
+      throw new Error('invalid code: ' + code)
+    }
+
+    // TODO validate something else?
+  }
+
   console.log('guessSecret', [secret, guess])
+  validate(secret)
+  validate(guess)
+
   const secrets: string[] = secret.split('')
   const guesses: string[] = guess.split('')
 

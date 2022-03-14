@@ -16,6 +16,46 @@ describe('MASTERMIND', () => {
       }
     }
 
+    describe('invalid input(s)', () => {
+      function createTest (secret: string, guess: string) {
+        return function () {
+          return evaluate(secret, guess)
+        }
+      }
+
+      xdescribe('nothing', () => {
+        describe('undefined', () => {
+          it('throws an exception', () => {
+            // expect(createTest(undefined, '1234')).toThrow() // PoC: TypeScript would not allow this
+          })
+        })
+
+        describe('null', () => {
+          it('throws an exception', () => {
+            // expect(createTest(null, '1234')).toThrow() // PoC: TypeScript would not allow this
+          })
+        })
+      })
+
+      describe('length', () => {
+        describe('12345', () => {
+          const secret = '12345'
+          it('throws an exception', () => {
+            expect(createTest(secret, secret)).toThrow()
+          })
+        })
+      })
+
+      describe('digits', () => {
+        describe('ABCD', () => {
+          const secret = 'ABCD'
+          it('throws an exception', () => {
+            expect(createTest(secret, secret)).toThrow()
+          })
+        })
+      })
+    })
+
     describe('secret', () => {
       describe('8520', () => {
         const secret = '8520'
@@ -80,7 +120,7 @@ describe('MASTERMIND', () => {
             describe('wrong location', () => {
               it('the rest of the numbers are wrong', () => {
                 // the ‘8’ in guess positions 2, 3 and 4
-                // should not refer the ‘8’ in secretposition 1
+                // should not refer the ‘8’ in secret position 1
                 expect(wrongLocation).not.toBe(3)
                 expect(wrongLocation).toBe(0)
               })
@@ -91,7 +131,7 @@ describe('MASTERMIND', () => {
             beforeEach(setup(secret, '8151'))
 
             describe('correct location', () => {
-              it('first "8__" is correct', () => {
+              it('first "8___" is correct', () => {
                 expect(rightLocation).toBe(1)
               })
             })
@@ -113,7 +153,7 @@ describe('MASTERMIND', () => {
             })
 
             describe('wrong location', () => {
-              it('"02" are correct, but in the wrong location ("20")', () => {
+              it('"__02" are correct, but in the wrong location ("__20")', () => {
                 expect(wrongLocation).toBe(2)
               })
             })
