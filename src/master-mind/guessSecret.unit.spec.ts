@@ -79,6 +79,9 @@ describe('MASTERMIND', () => {
 
             describe('wrong location', () => {
               it('the rest of the numbers are wrong', () => {
+                // the ‘8’ in guess positions 2, 3 and 4
+                // should not refer the ‘8’ in secretposition 1
+                expect(wrongLocation).not.toBe(3)
                 expect(wrongLocation).toBe(0)
               })
             })
