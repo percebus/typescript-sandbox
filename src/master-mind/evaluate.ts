@@ -16,7 +16,7 @@
 
 export type correctTuple = [number, number]
 
-export const guessSecret = (secret: string, guess: string): correctTuple => {
+export const evaluate = (secret: string, guess: string): correctTuple => {
   console.log('guessSecret', [secret, guess])
   const secrets: string[] = secret.split('')
   const guesses: string[] = guess.split('')

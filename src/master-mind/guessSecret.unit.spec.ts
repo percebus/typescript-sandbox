@@ -1,4 +1,4 @@
-import { correctTuple, guessSecret } from './guessSecret'
+import { correctTuple, evaluate } from './evaluate'
 
 describe('MASTERMIND', () => {
   describe('guessSecret(secret, guess)', () => {
@@ -10,7 +10,7 @@ describe('MASTERMIND', () => {
 
     function setup (secret: string, guess: string) {
       return function () {
-        feedback = guessSecret(secret, guess)
+        feedback = evaluate(secret, guess)
         rightLocation = feedback[0]
         wrongLocation = feedback[1]
       }
