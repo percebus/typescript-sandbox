@@ -9,16 +9,16 @@ describe('MASTERMIND', () => {
 
   describe('guessSecret(secret, guess)', () => {
     describe('secret', () => {
-      xdescribe('8520', () => {
+      describe('8520', () => {
         const secret = '8520'
         describe('guess', () => {
-          describe('1111', () => {
-            beforeEach(() => {
-              feedback = guessSecret(secret, '1111')
-              rightLocation = feedback[0]
-              wrongLocation = feedback[1]
-            })
+          beforeEach(() => {
+            feedback = guessSecret(secret, '1111')
+            rightLocation = feedback[0]
+            wrongLocation = feedback[1]
+          })
 
+          describe('1111', () => {
             describe('correct location', () => {
               it('all numbers are incorrect', () => {
                 expect(rightLocation).toBe(0)
@@ -35,6 +35,8 @@ describe('MASTERMIND', () => {
           describe('8520', () => {
             beforeEach(() => {
               feedback = guessSecret(secret, secret) // on-purpose
+              rightLocation = feedback[0]
+              wrongLocation = feedback[1]
             })
 
             describe('correct location', () => {
@@ -53,6 +55,8 @@ describe('MASTERMIND', () => {
           describe('0258', () => {
             beforeEach(() => {
               feedback = guessSecret(secret, '0258')
+              rightLocation = feedback[0]
+              wrongLocation = feedback[1]
             })
 
             describe('correct location', () => {
@@ -71,6 +75,8 @@ describe('MASTERMIND', () => {
           describe('8888', () => {
             beforeEach(() => {
               feedback = guessSecret(secret, '8888')
+              rightLocation = feedback[0]
+              wrongLocation = feedback[1]
             })
 
             describe('correct location', () => {
@@ -89,6 +95,8 @@ describe('MASTERMIND', () => {
           describe('8151', () => {
             beforeEach(() => {
               feedback = guessSecret(secret, '8151')
+              rightLocation = feedback[0]
+              wrongLocation = feedback[1]
             })
 
             describe('correct location', () => {
@@ -107,6 +115,8 @@ describe('MASTERMIND', () => {
           describe('8502', () => {
             beforeEach(() => {
               feedback = guessSecret(secret, '8502')
+              rightLocation = feedback[0]
+              wrongLocation = feedback[1]
             })
 
             describe('correct location', () => {
@@ -117,7 +127,7 @@ describe('MASTERMIND', () => {
 
             describe('wrong location', () => {
               it('"02" are correct, but in the wrong location ("20")', () => {
-                expect(wrongLocation).toBe(5)
+                expect(wrongLocation).toBe(2)
               })
             })
           })
@@ -125,6 +135,8 @@ describe('MASTERMIND', () => {
           describe('8820', () => {
             beforeEach(() => {
               feedback = guessSecret(secret, '8820')
+              rightLocation = feedback[0]
+              wrongLocation = feedback[1]
             })
 
             describe('correct location', () => {
@@ -143,6 +155,8 @@ describe('MASTERMIND', () => {
           describe('4520', () => {
             beforeEach(() => {
               feedback = guessSecret(secret, '4520')
+              rightLocation = feedback[0]
+              wrongLocation = feedback[1]
             })
 
             describe('correct location', () => {

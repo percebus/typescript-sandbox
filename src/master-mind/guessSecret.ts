@@ -21,6 +21,7 @@ export const guessSecret = (secret: string, guess: string): [number, number] => 
   const _secrets: string[] = []
   const _guesses: string[] = []
 
+  // TODO Simplify! Avoid doing 2 trips
   let rightLocation: number = 0
   for (let i: number = 0, len: number = secrets.length; i < len; i++) { // TODO? .forEach ?
     const s: string = secrets[i]
