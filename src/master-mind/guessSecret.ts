@@ -13,7 +13,10 @@
  *   2. The second integer in the feedback represents the count of correct digits in the wrong location
  *   3. The digits matched in guideline #1 should not be available in the count for guideline #2
  */
-export const guessSecret = (secret: string, guess: string): [number, number] => {
+
+export type correctTuple = [number, number]
+
+export const guessSecret = (secret: string, guess: string): correctTuple => {
   console.log('guessSecret', [secret, guess])
   const secrets: string[] = secret.split('')
   const guesses: string[] = guess.split('')
@@ -34,13 +37,9 @@ export const guessSecret = (secret: string, guess: string): [number, number] => 
     }
   }
 
-  console.debug('secrets', _secrets)
-  console.debug('guesses', _guesses)
-
   let wrongLocation: number = 0
   _guesses.forEach((g: string) => {
     if (_secrets.includes(g)) {
-      console.debug(g, _secrets)
       wrongLocation += 1
     }
   })
